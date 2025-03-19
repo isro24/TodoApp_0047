@@ -37,11 +37,16 @@ class _FormPageState extends State<FormPage> {
                   const Text(
                     "Set Task Date & Time",
                     style: TextStyle(
+                      fontFamily: "Montserrat",
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                       decoration: TextDecoration.none
                     ),
+                  ),
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: const Icon(Icons.close, size: 25,)
                   )
                 ],
               ),
