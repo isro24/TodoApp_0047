@@ -36,6 +36,7 @@ class _FormPageState extends State<FormPage> {
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Form(
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -67,11 +68,17 @@ class _FormPageState extends State<FormPage> {
                             borderSide: const BorderSide(color: Colors.deepPurple)
                           )
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty){
+                            return "Please enter some text";
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     const SizedBox(width:10),
                     FilledButton(
-                      onPressed: (){},
+                      onPressed: addTask,
                       style: FilledButton.styleFrom(
                         backgroundColor: Colors.deepPurple[500]
                       ),
