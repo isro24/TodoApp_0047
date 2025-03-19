@@ -160,7 +160,9 @@ class _FormPageState extends State<FormPage> {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          labelText: "Enter your Task",
+                          labelText: "First Task",
+                          hintText: "Enter your First Task",
+                          hintStyle: TextStyle(color: Colors.grey), 
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(4),
                             borderSide: const BorderSide(color: Colors.deepPurple)
