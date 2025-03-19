@@ -11,9 +11,14 @@ class _FormPageState extends State<FormPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController taskController = TextEditingController();
   final List<Map<String, dynamic>> tasks = [];
+  DateTime? selectedDate;
+  bool isDateValid = true;
 
   void addTask(){
-    if (formKey.currentState!.validate()){
+    setState(() {
+      isDateValid = selectedDate != null;
+    });
+    if (formKey.currentState!.validate() && isDateValid){
       setState(() {
         tasks.add({
           "title": taskController.text,
@@ -47,7 +52,15 @@ class _FormPageState extends State<FormPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        
+                       Text(selectedDate != null
+                            ? "${selectedDate!}"
+                            : "Select a date"
+                            ),
+                            if (!isDateValid)
+                            const Text(
+                              "Please select a date",
+                              style: TextStyle(color: Colors.red),
+                            )
                       ],
                     ),
                     IconButton(
