@@ -171,6 +171,7 @@ class _FormPageState extends State<FormPage> {
                   children: [
                     Expanded(
                       child: TextFormField(
+                        controller: taskController,
                         decoration: InputDecoration(
                           labelText: "First Task",
                           hintText: "Enter your First Task",
