@@ -38,6 +38,18 @@ class _FormPageState extends State<FormPage> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Enter your Task"
+                        ),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
