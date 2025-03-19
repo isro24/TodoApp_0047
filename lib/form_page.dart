@@ -62,7 +62,37 @@ class _FormPageState extends State<FormPage> {
                   isDateValid = true;
                 },
               ),
-            )
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 160),
+              child: SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)
+                    )
+                  ),
+                  onPressed: (){
+                    setState(() {
+                      selectedDate ??= DateTime.now();
+                      isDateValid = true;
+                    });
+                    Navigator.of(context).pop();
+                  }, 
+                  child: const Text(
+                    "Select",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                    ),
+                  )
+                ),
+              ),
+            ),
           ],
         ),
       ),
