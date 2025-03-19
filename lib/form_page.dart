@@ -107,7 +107,7 @@ class _FormPageState extends State<FormPage> {
       setState(() {
         tasks.add({
           "title": taskController.text,
-          "deadline"
+          "deadline": selectedDate!,
           "done": false
         });
         taskController.clear();
@@ -189,7 +189,46 @@ class _FormPageState extends State<FormPage> {
                 const SizedBox(height: 20,),
                 const Text(
                   "List Tasks",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),)
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: tasks.length,
+                    itemBuilder: (context, index) {
+                      final task = tasks[index]; 
+                      return Card(
+                        color: Colors.grey[200],
+                        child: ListTile(
+                          title: Text(
+                            task["title"],
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Deadline: ${task["deadline"]}",
+                                style: const TextStyle(color: Colors.grey),
+                              ),
+                              Text(
+                                task["done"] ? "Done" : "Not Done",
+                                style: TextStyle(
+                                  color: task["done"] ? Colors.green : Colors.red,
+                                ),
+                              ),
+                            ]
+                          ),
+                          trailing: Checkbox(
+                            value: task["done"],
+                            onChanged: (value) {
+                              tasks[index]["done"] = value;
+                            },
+                          )
+                        ),
+                      ); 
+                    },
+                  )
+                ),
               ],
             ),
           ),
