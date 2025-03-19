@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
@@ -150,7 +151,7 @@ class _FormPageState extends State<FormPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                        Text(selectedDate != null
-                            ? "${selectedDate!}"
+                       ? DateFormat('dd-MM-yyyy HH:mm').format(selectedDate!)
                             : "Select a date"
                             ),
                             if (!isDateValid)
@@ -220,7 +221,7 @@ class _FormPageState extends State<FormPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Deadline: ${task["deadline"]}",
+                                "Deadline: ${DateFormat('dd-MM-yyyy HH:mm').format(task["deadline"])}",
                                 style: const TextStyle(color: Colors.grey),
                               ),
                               Text(
