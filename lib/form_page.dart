@@ -44,7 +44,11 @@ class _FormPageState extends State<FormPage> {
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration(
-                          labelText: "Enter your Task"
+                          labelText: "Enter your Task",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            borderSide: const BorderSide(color: Colors.deepPurple)
+                          )
                         ),
                       ),
                     )
