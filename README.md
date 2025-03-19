@@ -1,16 +1,9 @@
-# statefull_and_form
+-- Halaman Form Page
+![Halaman Form Page Validation](https://github.com/user-attachments/assets/af444304-8a58-441c-864a-8108dfc19111)
 
-A new Flutter project.
+-- Date & TIme
+![Date   Time ](https://github.com/user-attachments/assets/4f61d45c-5775-4e34-b2a3-fb906de7e536)
 
-## Getting Started
+-- List Tasks Checklist dan Tidak
+![SnackBar Ketika Berhasil Submit Task](https://github.com/user-attachments/assets/d1e489b9-6036-4f9c-ad7d-d0c16ba066cf)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
