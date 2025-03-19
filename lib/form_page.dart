@@ -15,6 +15,7 @@ class _FormPageState extends State<FormPage> {
   final List<Map<String, dynamic>> tasks = [];
   DateTime? selectedDate;
   bool isDateValid = true;
+  final Color customColor = Colors.deepPurple[400]!;
 
   void showDateTimePicker() {
     showCupertinoModalPopup(
@@ -178,9 +179,13 @@ class _FormPageState extends State<FormPage> {
                           hintText: "Enter your First Task",
                           hintStyle: TextStyle(color: Colors.grey), 
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide: const BorderSide(color: Colors.deepPurple)
-                          )
+                          borderRadius: BorderRadius.circular(4),
+                          borderSide: BorderSide(color: Colors.grey), 
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          borderSide: BorderSide(color: customColor, width: 2), 
+                        ),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty){
@@ -194,7 +199,7 @@ class _FormPageState extends State<FormPage> {
                     FilledButton(
                       onPressed: addTask,
                       style: FilledButton.styleFrom(
-                        backgroundColor: Colors.deepPurple[500]
+                        backgroundColor: customColor
                       ),
                       child: const Text("Submit"),
                     )
@@ -239,6 +244,13 @@ class _FormPageState extends State<FormPage> {
                                 tasks[index]["done"] = value;
                               });
                             },
+                            fillColor: WidgetStateProperty.resolveWith((states) {
+                            if (states.contains(WidgetState.selected)) {
+                              return customColor; 
+                            }
+                            return Colors.white; 
+                          }),
+                          checkColor: Colors.white, 
                           )
                         ),
                       ); 
