@@ -10,6 +10,20 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController taskController = TextEditingController();
+  final List<Map<String, dynamic>> tasks = [];
+
+  void addTask(){
+    if (formKey.currentState!.validate()){
+      setState(() {
+        tasks.add({
+          "title": taskController.text,
+          "deadline"
+          "done": false
+        });
+        taskController.clear();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
