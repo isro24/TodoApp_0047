@@ -8,6 +8,9 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController taskController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
