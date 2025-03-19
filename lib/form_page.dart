@@ -111,6 +111,7 @@ class _FormPageState extends State<FormPage> {
           "done": false
         });
         taskController.clear();
+        selectedDate = null;
       });
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -232,7 +233,9 @@ class _FormPageState extends State<FormPage> {
                           trailing: Checkbox(
                             value: task["done"],
                             onChanged: (value) {
-                              tasks[index]["done"] = value;
+                              setState(() {
+                                tasks[index]["done"] = value;
+                              });
                             },
                           )
                         ),
