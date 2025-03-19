@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
@@ -13,6 +14,22 @@ class _FormPageState extends State<FormPage> {
   final List<Map<String, dynamic>> tasks = [];
   DateTime? selectedDate;
   bool isDateValid = true;
+
+  void showDateTimePicker() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (_) => Container(
+        height: 300,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+      ),
+    );
+  }
 
   void addTask(){
     setState(() {
@@ -64,7 +81,7 @@ class _FormPageState extends State<FormPage> {
                       ],
                     ),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: showDateTimePicker,
                       icon: const Icon(Icons.calendar_today, color: Colors.blue),
                     ),
                   ],
