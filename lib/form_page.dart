@@ -51,6 +51,14 @@ class _FormPageState extends State<FormPage> {
                           )
                         ),
                       ),
+                    ),
+                    const SizedBox(width:10),
+                    FilledButton(
+                      onPressed: (){},
+                      style: FilledButton.styleFrom(
+                        backgroundColor: Colors.deepPurple[500]
+                      ),
+                      child: const Text("Submit"),
                     )
                   ],
                 )
